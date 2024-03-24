@@ -92,6 +92,5 @@ namespace Calc
             }
             return cheackinOneNumber;
         }
-
     }
 }

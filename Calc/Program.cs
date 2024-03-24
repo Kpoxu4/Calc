@@ -15,25 +15,19 @@ while (true)
 
     if (stringOperation != "" && stringOperation.Length >= 3 && Cheacking.CheackinOneNumber(stringOperation))
     {
-
         var lastSimbol = stringOperation[stringOperation.Length - 1];
         var firstSimbol = stringOperation[0];
-
         if (Cheacking.CheckingForCharacters(stringOperation) && firstSimbol != '/' && firstSimbol != '*' && Cheacking.CheackinDuobleWrongOp(stringOperation))
         {
-
             while (lastSimbol == '+' || lastSimbol == '-' || lastSimbol == '/' || lastSimbol == '*')
             {
                 stringOperation = stringOperation.TrimEnd(lastSimbol);
                 lastSimbol = stringOperation[stringOperation.Length - 1];
             }
-
             if (stringOperation.Contains('('))
             {
-
                 if (Cheacking.CheackingBrackets(stringOperation))
                 {
-
                     Information.Info($"{stringOperation} = {Math.Round(Calculate.Solution(stringOperation), 3, MidpointRounding.ToEven)}");
                 }
                 else
